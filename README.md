@@ -19,6 +19,7 @@ API-based web scraping and AI analysis system (PythonAnywhere compatible version
 - System dependencies required
 
 ## Project Structure
+```
 AI-JARVIS/
 ├── ai_web_scraper/        # Main project directory
 ├── scraper/              # Main app directory
@@ -26,6 +27,7 @@ AI-JARVIS/
 ├── .env.example         # Example environment variables
 ├── README.md            # Project documentation
 └── deployment.md        # Deployment guide
+```
 
 ## Features
 - Web scraping via ScrapingBee API
