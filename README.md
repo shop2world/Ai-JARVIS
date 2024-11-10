@@ -1,78 +1,113 @@
-# AI Web Scraper
+# AI-JARVIS
 
-A Django-based web scraper that uses ScrapingBee API and OpenAI API to analyze web content.
-Features
-Web content scraping using ScrapingBee API
-Content analysis using OpenAI GPT
-Clean and simple user interface
-Prerequisites
-Python 3.8+
-ScrapingBee API key
-OpenAI API key
-Local Installation
-Clone the repository:
-Bash
-Create and activate virtual environment:
-Bash
-Install required packages:
-Bash
-Set up environment variables:
-Bash
-Run migrations:
-Bash
-Start development server:
-Bash
-PythonAnywhere Deployment Guide
-Create and login to PythonAnywhere account
-Create virtual environment in Bash console:
-Bash
-Clone the project:
-Bash
-Install required packages:
-Bash
-Configure PythonAnywhere web app:
-Create new web app from Web tab
-Select Django framework
-Choose Python 3.8
-Set virtual environment path: /home/your_username/.virtualenvs/ai_scraper
-Modify WSGI configuration file:
-Set environment variables:
-Add in Web tab's Environment variables section:
-Configure static files:
-Bash
-Run migrations:
-Bash
-Reload web app
-API Key Setup
-ScrapingBee
-Sign up at ScrapingBee
-Get API key
-Set in .env file or environment variables
-OpenAI
-Sign up at OpenAI
-Get API key
-Set in .env file or environment variables
-Usage
-Access the web application
-Enter URL to analyze
-Enter analysis description
-Click "Scrape and Parse" button
-View analysis results
-Security Notes
-Never commit your .env file
-Keep your API keys secure
-Set DEBUG=False in production
-License
+API-based web scraping and AI analysis system (PythonAnywhere compatible version of AI Web Scraper)
+
+## Major Changes (API Version vs Local Selenium Version)
+
+### API Version (Current)
+- Stable server-side scraping using ScrapingBee API
+- No browser/driver installation required
+- Full PythonAnywhere compatibility
+- Cloud environment support
+- API call costs apply
+
+### Selenium Version (Original)
+- Requires local Chrome WebDriver
+- Uses system resources
+- Limited on PythonAnywhere free accounts
+- Free to use
+- System dependencies required
+
+## Project Structure
+AI-JARVIS/
+├── ai_web_scraper/        # Main project directory
+├── scraper/              # Main app directory
+├── requirements.txt      # Project dependencies
+├── .env.example         # Example environment variables
+├── README.md            # Project documentation
+└── deployment.md        # Deployment guide
+
+## Features
+- Web scraping via ScrapingBee API
+- Content analysis with OpenAI GPT
+- Cloud environment support
+- Simple user interface
+
+## Prerequisites
+- Python 3.8+
+- ScrapingBee API key
+- OpenAI API key
+
+## Installation
+
+1. Clone the repository:
+
+git clone https://github.com/shop2world/Ai-JARVIS.git
+
+2. Create and activate virtual environment:
+
+# Windows
+python -m venv venv
+.\venv\Scripts\activate
+
+# macOS/Linux
+python -m venv venv
+source venv/bin/activate
+
+3. Install required packages:
+
+pip install -r requirements.txt
+
+4. Set up environment variables:
+
+# Copy .env.example to .env
+cp .env.example .env
+
+# Add your API keys to .env file
+OPENAI_API_KEY=your_openai_api_key
+SCRAPINGBEE_API_KEY=your_scrapingbee_api_key
+
+## API Usage and Costs
+- ScrapingBee: 
+  - Free trial: 1,000 credits
+  - Basic plan: $49/month (10,000 credits)
+- OpenAI:
+  - GPT-3.5-turbo: $0.002/1K tokens
+
+## Performance Comparison
+| Feature | API Version | Selenium Version |
+|---------|-------------|------------------|
+| Speed | Faster | Slower |
+| Cost | Paid | Free |
+| Reliability | High | Medium |
+| Cloud Support | Yes | Limited |
+
+## Security
+- Maintain API key security
+- Proper environment variable management
+- HTTPS recommended
+- Never commit .env file
+- Set DEBUG=False in production
+
+## License
 MIT License
-Contributing
+
+## Contributing
 1. Fork the repository
-Create your feature branch
-Commit your changes
-4. Push to the branch
-Create a Pull Request
-Support
-Please open an issue for support.
-Acknowledgments
-OpenAI for providing GPT API
-ScrapingBee for web scraping capabilities
-Django framework
+2. Create feature branch
+3. Commit changes
+4. Push to branch
+5. Create Pull Request
+
+## Support
+Use the issue tracker for inquiries.
+
+## Acknowledgments
+- OpenAI for GPT API
+- ScrapingBee for web scraping API
+- Django framework
+- Original AI-Web-Scraper project
+```
+
+</rewritten_file>
+
