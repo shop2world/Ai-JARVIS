@@ -11,7 +11,7 @@ API-based web scraping and AI analysis system (PythonAnywhere compatible version
 - Cloud environment support
 - API call costs apply
 
-### Selenium Version (Original)
+### Selenium Version ([Original Project](https://github.com/shop2world/AI-Web-Scraper))
 - Requires local Chrome WebDriver
 - Uses system resources
 - Limited on PythonAnywhere free accounts
