@@ -107,7 +107,11 @@ MIT License
 5. Create Pull Request
 
 ## Support
-Use the issue tracker for inquiries.
+For any inquiries or support:
+- Contact: Frank Kim
+- Email: info@shop2world.com
+- Twitter: [@salecoupon](https://x.com/salecoupon)
+- Issue Tracker: Use the GitHub issue tracker for technical questions
 
 ## Acknowledgments
 - OpenAI for GPT API
