@@ -19,7 +19,6 @@ API-based web scraping and AI analysis system (PythonAnywhere compatible version
 - System dependencies required
 
 ## Project Structure
-```
 AI-JARVIS/
 ├── ai_web_scraper/        # Main project directory
 ├── scraper/              # Main app directory
@@ -27,7 +26,6 @@ AI-JARVIS/
 ├── .env.example         # Example environment variables
 ├── README.md            # Project documentation
 └── deployment.md        # Deployment guide
-```
 
 ## Features
 - Web scraping via ScrapingBee API
@@ -43,11 +41,13 @@ AI-JARVIS/
 ## Installation
 
 1. Clone the repository:
-
+```bash
 git clone https://github.com/shop2world/Ai-JARVIS.git
+cd Ai-JARVIS
+```
 
 2. Create and activate virtual environment:
-
+```bash
 # Windows
 python -m venv venv
 .\venv\Scripts\activate
@@ -55,19 +55,22 @@ python -m venv venv
 # macOS/Linux
 python -m venv venv
 source venv/bin/activate
+```
 
 3. Install required packages:
-
+```bash
 pip install -r requirements.txt
+```
 
 4. Set up environment variables:
-
+```bash
 # Copy .env.example to .env
 cp .env.example .env
 
 # Add your API keys to .env file
 OPENAI_API_KEY=your_openai_api_key
 SCRAPINGBEE_API_KEY=your_scrapingbee_api_key
+```
 
 ## API Usage and Costs
 - ScrapingBee: 
@@ -111,5 +114,5 @@ Use the issue tracker for inquiries.
 - Original AI-Web-Scraper project
 ```
 
-</rewritten_file>
+
 
