@@ -1,82 +1,78 @@
 # AI Web Scraper
 
-A Django-based web scraper that uses AI to analyze web content.
-
-## Features
-- Web content scraping
-- AI-powered content analysis using OpenAI GPT
-- Clean and simple user interface
-
-## Prerequisites
-- Python 3.8+
-- Chrome WebDriver
-- OpenAI API key
-
-## Installation
-
-1. Clone the repository:
-
-git clone https://github.com/shop2world/AI-Web-Scraper.git
-
-
-2. Create and activate virtual environment:
-
-
-# Windows
-
-python -m venv venv
-
-
-macOS/Linux
-python -m venv venv
-source venv/bin/activate
-
-
-3. Install required packages:
-
-pip install -r requirements.txt
-
-4. Set up environment variables:
-- Copy `.env.example` to `.env`
-- Update `.env` with your actual credentials:
-
-
-5. Run migrations:
-
-python manage.py migrate
-
-6. Start the development server:
-
-python manage.py runserver
-
-## Usage
-1. Access the application at `http://localhost:8000`
-2. Enter the URL you want to scrape
-3. Describe what you want to analyze
-4. Click "Scrape and Parse" to get results
-
-## Environment Variables
-| Variable | Description |
-|----------|-------------|
-| `OPENAI_API_KEY` | Your OpenAI API key |
-| `SBR_WEBDRIVER` | Path to Chrome WebDriver |
-
-## Contributing
+A Django-based web scraper that uses ScrapingBee API and OpenAI API to analyze web content.
+Features
+Web content scraping using ScrapingBee API
+Content analysis using OpenAI GPT
+Clean and simple user interface
+Prerequisites
+Python 3.8+
+ScrapingBee API key
+OpenAI API key
+Local Installation
+Clone the repository:
+Bash
+Create and activate virtual environment:
+Bash
+Install required packages:
+Bash
+Set up environment variables:
+Bash
+Run migrations:
+Bash
+Start development server:
+Bash
+PythonAnywhere Deployment Guide
+Create and login to PythonAnywhere account
+Create virtual environment in Bash console:
+Bash
+Clone the project:
+Bash
+Install required packages:
+Bash
+Configure PythonAnywhere web app:
+Create new web app from Web tab
+Select Django framework
+Choose Python 3.8
+Set virtual environment path: /home/your_username/.virtualenvs/ai_scraper
+Modify WSGI configuration file:
+Set environment variables:
+Add in Web tab's Environment variables section:
+Configure static files:
+Bash
+Run migrations:
+Bash
+Reload web app
+API Key Setup
+ScrapingBee
+Sign up at ScrapingBee
+Get API key
+Set in .env file or environment variables
+OpenAI
+Sign up at OpenAI
+Get API key
+Set in .env file or environment variables
+Usage
+Access the web application
+Enter URL to analyze
+Enter analysis description
+Click "Scrape and Parse" button
+View analysis results
+Security Notes
+Never commit your .env file
+Keep your API keys secure
+Set DEBUG=False in production
+License
+MIT License
+Contributing
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## Security Notice
-- Never commit your `.env` file
-- Keep your API keys private
-- Regularly rotate your credentials
-
-## License
-This project is licensed under the MIT License 
-
-## Acknowledgments
-- OpenAI for providing the GPT API
-- Beautiful Soup for web scraping capabilities
-- Django framework
+Create your feature branch
+Commit your changes
+4. Push to the branch
+Create a Pull Request
+Support
+Please open an issue for support.
+Acknowledgments
+OpenAI for providing GPT API
+ScrapingBee for web scraping capabilities
+Django framework
