@@ -23,8 +23,11 @@ workon ai_jarvis
 
 # Clone the repository
 git clone https://github.com/shop2world/Ai-JARVIS.git
+
 cd Ai-JARVIS
+
 Install requirements
+
 pip install -r requirements.txt
 
 
