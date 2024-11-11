@@ -8,84 +8,93 @@
 3. Open a Bash console from the Dashboard
 
 ### 2. Virtual Environment Setup
-
+```bash
 # Create virtual environment
 mkvirtualenv --python=/usr/bin/python3.8 ai_jarvis
 
 # Activate virtual environment
 workon ai_jarvis
 
-
-# Create virtual environment
+# Verify virtual environment
+which python
+# Should show: /home/your_username/.virtualenvs/ai_jarvis/bin/python
+```
 
 ### 3. Project Setup
-
-
+```bash
 # Clone the repository
+git clone https://github.com/shop2world/Ai-JARVIS.git
+cd Ai-JARVIS
+
+# Install requirements
+pip install -r requirements.txt
+```
 
 ### 4. Web App Configuration
 
-1. **Web App 기본 설정**
-   - PythonAnywhere 대시보드에서 'Web' 탭 클릭
-   - 'Add a new web app' 버튼 클릭
-   - 도메인 이름 확인 (예: your_username.pythonanywhere.com)
-   - 'Manual configuration' 선택
-   - Python 버전 3.8 선택
+1. **Basic Web App Setup**
+   - Click 'Web' tab in PythonAnywhere dashboard
+   - Click 'Add a new web app' button
+   - Confirm domain name (e.g., your_username.pythonanywhere.com)
+   - Select 'Manual configuration'
+   - Choose Python 3.8
 
-2. **Code 설정**
+2. **Code Configuration**
    - Source code: `/home/your_username/Ai-JARVIS`
    - Working directory: `/home/your_username/Ai-JARVIS`
    - WSGI configuration file: `/var/www/your_username_pythonanywhere_com_wsgi.py`
 
-3. **Virtual Environment 설정**
-   - Virtualenv 섹션에서 경로 입력:
+3. **Virtual Environment Setup**
+   - In Virtualenv section, enter path:
    `/home/your_username/.virtualenvs/ai_jarvis`
 
-4. **Static Files 설정**
-   - Static files 섹션에서:
+4. **Static Files Setup**
+   - In Static files section:
      - URL: `/static/`
      - Directory: `/home/your_username/Ai-JARVIS/staticfiles`
 
-5. **WSGI 파일 설정**
-   - WSGI configuration file 클릭하여 편집
-   ```python
-   import os
-   import sys
-
-   # 프로젝트 경로
-   path = '/home/your_username/Ai-JARVIS'
-   if path not in sys.path:
-       sys.path.append(path)
-
-   os.environ['DJANGO_SETTINGS_MODULE'] = 'ai_web_scraper.settings'
-
-   from django.core.wsgi import get_wsgi_application
-   application = get_wsgi_application()
-   ```
-
-6. **설정 확인 및 적용**
-   - 모든 경로가 정확한지 확인
-   - 'Reload' 버튼 클릭하여 변경사항 적용
-
-**주의사항**:
-- 모든 경로에서 'your_username'을 실제 PythonAnywhere 사용자명으로 변경
-- 경로는 대소문자를 구분하므로 정확히 입력
-- 프로젝트 디렉토리 구조가 올바른지 확인
-
 ### 5. Environment Variables
 
-1. **Web App Configuration Page에서 환경 변수 설정**
-   - PythonAnywhere 대시보드에서 'Web' 탭 클릭
-   - 해당 웹 앱 섹션으로 스크롤
-   - 'Environment variables' 섹션 찾기 (WSGI configuration file 섹션 아래에 있음)
-   - 'Add a new variable' 버튼 클릭
+1. **Setting Environment Variables**
+   - Scroll down in Web tab
+   - Find 'Environment variables' section
+   - Click 'Add a new variable'
 
-2. **필요한 환경 변수 추가**
+2. **Required Environment Variables**
+```bash
+OPENAI_API_KEY=your_openai_api_key
+SCRAPINGBEE_API_KEY=your_scrapingbee_api_key
+DJANGO_SECRET_KEY=your_secret_key
+DJANGO_DEBUG=False
+ALLOWED_HOSTS=your_username.pythonanywhere.com
+```
 
-### 6. Static Files and Database
+### 6. WSGI Configuration
 
-### 7. WSGI Configuration
-Edit the WSGI configuration file:
+1. **Edit WSGI File**
+```python
+import os
+import sys
+
+# Project path
+path = '/home/your_username/Ai-JARVIS'
+if path not in sys.path:
+    sys.path.append(path)
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'ai_web_scraper.settings'
+
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
+```
+
+### 7. Database and Static Files
+```bash
+# Collect static files
+python manage.py collectstatic
+
+# Run migrations
+python manage.py migrate
+```
 
 ### 8. Final Steps
 1. Reload the web app from the Web tab
@@ -94,21 +103,37 @@ Edit the WSGI configuration file:
 ## Troubleshooting
 
 ### Common Issues
-1. **Static Files Not Loading**
-   - Check static files configuration
-   - Run collectstatic again
 
-2. **API Connection Issues**
+1. **DisallowedHost Error**
+   - Add to ALLOWED_HOSTS in settings.py:
+   ```python
+   ALLOWED_HOSTS = [
+       'your_username.pythonanywhere.com',
+       'localhost',
+       '127.0.0.1',
+   ]
+   ```
+
+2. **Static Files Not Loading**
+   - Verify static files path
+   - Run `python manage.py collectstatic`
+   - Check STATIC_ROOT setting
+
+3. **API Connection Issues**
    - Verify API keys in environment variables
-   - Check API quotas and limits
+   - Check API quotas
 
-3. **500 Server Error**
-   - Check error logs in Web tab
+4. **500 Server Error**
+   - Check error logs
    - Verify DEBUG setting
    - Check file permissions
 
 ### Logs
-- Access logs from the Web tab
+- Access logs from Web tab
 - Error log: `/var/log/your_username.pythonanywhere.com.error.log`
 - Server log: `/var/log/your_username.pythonanywhere.com.server.log`
 
+## Support
+- Contact: Frank Kim
+- Email: info@shop2world.com
+- Twitter: [@salecoupon](https://x.com/salecoupon)
