@@ -22,24 +22,65 @@ workon ai_jarvis
 
 
 # Clone the repository
-git clone https://github.com/shop2world/Ai-JARVIS.git
-
-cd Ai-JARVIS
-
-Install requirements
-
-pip install -r requirements.txt
-
 
 ### 4. Web App Configuration
-1. Go to Web tab in PythonAnywhere dashboard
-2. Click "Add a new web app"
-3. Choose manual configuration
-4. Select Python 3.8
-5. Set virtual environment path: `/home/your_username/.virtualenvs/ai_jarvis`
+
+1. **Web App 기본 설정**
+   - PythonAnywhere 대시보드에서 'Web' 탭 클릭
+   - 'Add a new web app' 버튼 클릭
+   - 도메인 이름 확인 (예: your_username.pythonanywhere.com)
+   - 'Manual configuration' 선택
+   - Python 버전 3.8 선택
+
+2. **Code 설정**
+   - Source code: `/home/your_username/Ai-JARVIS`
+   - Working directory: `/home/your_username/Ai-JARVIS`
+   - WSGI configuration file: `/var/www/your_username_pythonanywhere_com_wsgi.py`
+
+3. **Virtual Environment 설정**
+   - Virtualenv 섹션에서 경로 입력:
+   `/home/your_username/.virtualenvs/ai_jarvis`
+
+4. **Static Files 설정**
+   - Static files 섹션에서:
+     - URL: `/static/`
+     - Directory: `/home/your_username/Ai-JARVIS/staticfiles`
+
+5. **WSGI 파일 설정**
+   - WSGI configuration file 클릭하여 편집
+   ```python
+   import os
+   import sys
+
+   # 프로젝트 경로
+   path = '/home/your_username/Ai-JARVIS'
+   if path not in sys.path:
+       sys.path.append(path)
+
+   os.environ['DJANGO_SETTINGS_MODULE'] = 'ai_web_scraper.settings'
+
+   from django.core.wsgi import get_wsgi_application
+   application = get_wsgi_application()
+   ```
+
+6. **설정 확인 및 적용**
+   - 모든 경로가 정확한지 확인
+   - 'Reload' 버튼 클릭하여 변경사항 적용
+
+**주의사항**:
+- 모든 경로에서 'your_username'을 실제 PythonAnywhere 사용자명으로 변경
+- 경로는 대소문자를 구분하므로 정확히 입력
+- 프로젝트 디렉토리 구조가 올바른지 확인
 
 ### 5. Environment Variables
-Add in Web tab's Environment variables section:
+
+1. **Web App Configuration Page에서 환경 변수 설정**
+   - PythonAnywhere 대시보드에서 'Web' 탭 클릭
+   - 해당 웹 앱 섹션으로 스크롤
+   - 'Environment variables' 섹션 찾기 (WSGI configuration file 섹션 아래에 있음)
+   - 'Add a new variable' 버튼 클릭
+
+2. **필요한 환경 변수 추가**
 
 ### 6. Static Files and Database
 
